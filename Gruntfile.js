@@ -63,7 +63,7 @@ module.exports = function (grunt) {
 
     });
 
-    var themes = ['azur', 'folio', 'fullscreen', 'miniml', 'twelve', 'classic'];
+    var themes = ['azur', 'folio', 'fullscreen', 'miniml', 'twelve', 'classic', 'light'];
     themes.forEach(function(name) {
 
         grunt.config(['uglify', name], {

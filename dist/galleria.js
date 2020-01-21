@@ -1219,10 +1219,11 @@ Galleria = function() {
     this._id = parseInt(M.random()*10000, 10);
 
     // add some elements
-    var divs =  'container stage images image-nav image-nav-left image-nav-right ' +
+    var divs =  'container stage images ' +
                 'info info-text info-title info-description ' +
+                'controls counter image-nav image-nav-left image-nav-right ' +
                 'thumbnails thumbnails-list thumbnails-container thumb-nav-left thumb-nav-right ' +
-                'loader counter tooltip',
+                'loader tooltip',
         spans = 'current total';
 
     $.each( divs.split(' '), function( i, elemId ) {
@@ -2895,13 +2896,15 @@ Galleria.prototype = {
             'image-nav' :
                 ['image-nav-right', 'image-nav-left'],
             'stage' :
-                ['images', 'loader', 'counter', 'image-nav'],
+                ['images', 'loader'],
+            'controls' :
+                ['counter', 'image-nav'],
             'thumbnails-list' :
                 ['thumbnails'],
             'thumbnails-container' :
                 ['thumb-nav-left', 'thumbnails-list', 'thumb-nav-right'],
             'container' :
-                ['stage', 'thumbnails-container', 'info', 'tooltip']
+                ['stage', 'controls', 'thumbnails-container', 'info', 'tooltip']
         });
 
         Utils.hide( this.$( 'counter' ).append(
@@ -5750,6 +5753,8 @@ Galleria.addTheme = function( theme ) {
 
     var css = false,
         reg, reg2;
+
+    delete theme.css;
 
     if ( typeof theme.css === 'string' ) {
 
