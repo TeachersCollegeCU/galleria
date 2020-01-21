@@ -7,22 +7,11 @@
  */
 
 ( function( window, factory ) {
-    if ( typeof define == 'function' && define.amd ) {
-        define( [ 'jquery' ], function( jQuery ) {
-            return factory( window, jQuery );
-        });
-    } else if ( typeof module == 'object' && module.exports ) {
-        module.exports = factory(
-            window,
-            require('jquery')
-        );
-    } else {
-        // browser global
-        window.Galleria = factory(
-            window,
-            window.jQuery
-        );
-    }
+    // browser global
+    window.Galleria = factory(
+        window,
+        window.jQuery
+    );
 
 }( window, function factory( window, $, Galleria, undef ) {
 
