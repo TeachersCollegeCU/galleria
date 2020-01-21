@@ -16,7 +16,7 @@
 
     Galleria.addTheme({
         name: 'light',
-        version: 1.5,
+        version: '1.6',
         author: 'Dasheng Jonathan Zhang',
         css: 'galleria.light.css', // not needed for webpack
         defaults: {
